@@ -2,6 +2,7 @@ from ase.io import read, write
 from ase.visualize.plot import plot_atoms
 import numpy as np
 import matplotlib.pyplot as plt
+from spacepick import Selector
 
 atoms = read('MoS2_ortho.vasp') * [2,4,1]
 atoms_S_mapping = np.array([atom.index for atom in atoms if atom.scaled_position[2]>0.5])
