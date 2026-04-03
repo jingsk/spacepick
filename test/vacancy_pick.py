@@ -8,7 +8,6 @@ atoms = read('MoS2_ortho.vasp') * [2,4,1]
 atoms_S_mapping = np.array([atom.index for atom in atoms if atom.scaled_position[2]>0.5])
 atoms_S = atoms[atoms_S_mapping]
 
-from vacancies import Selector
 vec_dis_mat = atoms_S.get_all_distances(mic=True, vector=True)
 m = 9
 selector = Selector(vec_dis_mat)
